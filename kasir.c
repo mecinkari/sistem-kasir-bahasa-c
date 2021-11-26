@@ -6,10 +6,10 @@
 int main(int argc, char const *argv[])
 {
     char yes[3] = "";
-    char *barang[5] = {"Beras", "Sabun", "Minyak", "Pembalut", "Kopi ABC"};
+    char *barang[5] = {"Beras", "Sabun", "Minyak", "Roti", "Kopi ABC"};
     char *barang_dipilih[30];
     int pilihan, uang, kembalian, total, i, j, banyak, jumlah[30];
-    int harga[5] = {15000, 5000, 6000, 12000, 2500};
+    int harga[5] = {15000, 5000, 6000, 7000, 2500};
     int isTrue = 1;
 
     printf("======= Kasir Koperasi Mini ======= \n");
@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
     printf("1. Beras (1 liter) Rp15.000\n");
     printf("2. Sabun Rp5.000\n");
     printf("3. Minyak Rp6.000\n");
-    printf("4. Pembalut Rp12.000\n");
+    printf("4. Roti Rp7.000\n");
     printf("5. Kopi ABC Rp2.500\n");
 
     i = 0;
