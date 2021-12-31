@@ -63,7 +63,8 @@ int main(int argc, char const *argv[])
     printf("\n======= List Pembayaran =======\n");
     for (j = 0; j < i; j++)
     {
-        printf("%5s  %7d \n", barang_dipilih[j], jumlah[j]);
+        // int total_harga = harga[j] * jumlah[j];
+        printf("%15s %7d\n", barang_dipilih[j], jumlah[j]);
     }
     printf("total:\t%d\n\n", total);
 
