@@ -9,3 +9,4 @@ Kelompok 5:
 - Muhammad Fadhil Alhafizh
 - Muhammad Ikbar Adani
 
+Kode program ada [disini](kasir.c)
