@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
 
 int main(int argc, char const *argv[])
 {
     char yes[3] = "";
+    char isMember[3] = "";
     char *barang[5] = {"Beras", "Sabun", "Minyak", "Roti", "Kopi ABC"};
     char *barang_dipilih[30];
-    int pilihan, uang, kembalian, total, i, j, banyak, jumlah[30];
+    int pilihan, uang, kembalian, total, i, j, banyak, jumlah[30], harga_dipilih[30];
     int harga[5] = {15000, 5000, 6000, 7000, 2500};
     int isTrue = 1;
 
@@ -29,6 +29,7 @@ int main(int argc, char const *argv[])
         scanf("%d", &pilihan);
         pilihan = pilihan - 1;
         barang_dipilih[i] = barang[pilihan];
+        harga_dipilih[i] = harga[pilihan];
 
         if ((pilihan + 1 > 5) || (pilihan + 1 < 1))
         {
@@ -61,12 +62,30 @@ int main(int argc, char const *argv[])
     }
 
     printf("\n======= List Pembayaran =======\n");
+    printf("%15s %7s %10s %10s\n", "Barang", "Jumlah", "Harga", "Total");
     for (j = 0; j < i; j++)
     {
-        // int total_harga = harga[j] * jumlah[j];
-        printf("%15s %7d\n", barang_dipilih[j], jumlah[j]);
+        int total_harga = harga_dipilih[j] * jumlah[j];
+        printf("%15s %7d %10d %10d\n", barang_dipilih[j], jumlah[j], harga_dipilih[j], total_harga);
     }
-    printf("total:\t%d\n\n", total);
+
+    printf("\nApakah anda memiliki kartu member? [yes/no]: ");
+    scanf("%s", &isMember);
+    int member = strcmp("yes", isMember);
+
+    if (member == 0)
+    {
+        printf("\nAnda mendapatkan diskon sebesar 20%% \n");
+        int diskon = total * 0.2;
+        total = total - diskon;
+        printf("total:\t%d\n\n", total);
+        goto pembayaran;
+    }
+    else
+    {
+        printf("total:\t%d\n\n", total);
+        goto pembayaran;
+    }
 
 pembayaran:
     printf("Masukkan uang: ");
